@@ -81,7 +81,7 @@ public class SudokuBacktracking {
 							System.out.println("Número " + number + " Viola As Regras Do Sudoku.\nLogo Não Pode Ser Inserido Naquela Posição.");
 							if (number == 9) {
 								System.out.println();
-								System.out.println("Sem Solução Para o Sudoku Na Linha " + (row+1) + " | Coluna "+ (col+1) + " É Necessário Fazer Backtracking!");
+								System.out.println("Sem Solução Para o Sudoku Na Linha " + (row+1) + " | Coluna "+ (col+1) + "\nÉ Necessário Fazer Backtracking!");
 								System.out.println();
 								display();
 								System.out.println();
@@ -133,6 +133,9 @@ public class SudokuBacktracking {
 				SudokuBacktracking sudoku = new SudokuBacktracking(board);
 				sudoku.display();
 				sudoku.solve();
+				System.out.println();
+				System.out.println("Solução:");
+				System.out.println();
 				sudoku.display();
 	}
 }

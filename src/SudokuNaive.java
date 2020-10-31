@@ -1,4 +1,3 @@
-
 public class SudokuNaive {
 
 	private int[][] board;
@@ -52,7 +51,7 @@ public class SudokuNaive {
 		return !isInRow(row, number)  &&  !isInCol(col, number)  &&  !isInBox(row, col, number);
 	}
 
-	public boolean solve() {
+	public boolean solveSudokuNaive() {
 		for (int row = 0; row < SIZE; row++) {
 			for (int col = 0; col < SIZE; col++) {
 				System.out.println("Posição Atual: \nLinha: " + (row+1) + "\nColuna: " + (col+1));
@@ -68,6 +67,7 @@ public class SudokuNaive {
 							System.out.println();
 							System.out.println("Número " + number + " Não Viola Nenhuma Regra Do Sudoku.\nLogo É Inserido Naquela Posição.");
 							board[row][col] = number;
+							print();
 							break;
 						} else {
 							System.out.println("Número " + number + " Viola As Regras Do Sudoku.\nLogo Não Pode Ser Inserido Naquela Posição.");
@@ -88,7 +88,7 @@ public class SudokuNaive {
 		return true;
 	}
 
-	public void display() {
+	public void print() {
 		for (int i = 0; i < SIZE; i++) {
 			for (int j = 0; j < SIZE; j++) {
 				System.out.print(" " + board[i][j]);
@@ -118,8 +118,8 @@ public class SudokuNaive {
 			{0, 0, 0, 0, 8, 0, 0, 7, 9} 
 				}; 
 				SudokuNaive sudoku = new SudokuNaive(board);
-				sudoku.display();
-				sudoku.solve();
-				sudoku.display();
+				sudoku.print();
+				sudoku.solveSudokuNaive();
+				sudoku.print();
 	}
 }
